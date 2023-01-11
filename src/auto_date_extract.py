@@ -25,11 +25,11 @@ userid='yuoijn08'
 userpw='dbwlssla20!'
 driver.get(url)
 time.sleep(5)
-def nlog_bt():
-    nelem=driver.find_element(By.CLASS_NAME,'link_login')
-    nelem.click()
+# def nlog_bt():
+#     nelem=driver.find_element(By.CLASS_NAME,'link_login')
+#     nelem.click()
 
-nlog_bt()
+# nlog_bt()
 # parsing > log
 def remove_html_tags(data):
     p=re.compile(r'<.*?')
@@ -52,7 +52,7 @@ def insert_id(id):
     pyperclip.copy(userid)
     id.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
-insert_id()
+insert_id(id)
 
 def insert_pw(pw):
     pw = driver.find_element(By.ID,'pw')
@@ -60,9 +60,9 @@ def insert_pw(pw):
     pyperclip.copy(userpw)
     pw.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
-
+insert_pw(pw)
 
 def log_bt(bt):
     lo_bt = driver.find_element(By.ID,'log.login')
     bt.click
-
+log_bt(bt)
