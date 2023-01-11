@@ -30,7 +30,7 @@ def nlog_bt():
     nelem.click()
 
 nlog_bt()
-#parsing > log
+# parsing > log
 def remove_html_tags(data):
     p=re.compile(r'<.*?')
     return p.sub('',str(data))
@@ -45,7 +45,6 @@ def get_crawl(URL):
     
 elem = driver.find_element(By.XPATH,'//*[@id="account"]/a').click()
 
-
 #로그인 아이디, 비밀번호 입력 및 로그인 성공
 def insert_id(id):
     id = driver.find_element(By.ID,'id')
@@ -53,7 +52,7 @@ def insert_id(id):
     pyperclip.copy(userid)
     id.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
-    
+insert_id()
 
 def insert_pw(pw):
     pw = driver.find_element(By.ID,'pw')
