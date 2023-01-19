@@ -31,19 +31,23 @@ time.sleep(5)
 
 # nlog_bt()
 # parsing > log
-def remove_html_tags(data):
-    p=re.compile(r'<.*?')
-    return p.sub('',str(data))
 
-def get_crawl(URL):
-    response = driver.get(URL)
-    html = driver.page_source
-    soup7 = BeautifulSoup(html,'html.parser')
-    ex_log_divs = soup7.find('div, {id : view_content}')
-    crawl_data = remove_html_tags(ex_log_divs)
-    return crawl_data
+elem = driver.find_element (By.CLASS_NAME, 'link_login')
+elem.click()
+
+# def remove_html_tags(data):
+#     p=re.compile(r'<.*?')
+#     return p.sub('',str(data))
+
+# def get_crawl(URL):
+#     response = driver.get(URL)
+#     html = driver.page_source
+#     soup7 = BeautifulSoup(html,'html.parser')
+#     ex_log_divs = soup7.find('div, {id : view_content}')
+#     crawl_data = remove_html_tags(ex_log_divs)
+#     return crawl_data
     
-elem = driver.find_element(By.XPATH,'//*[@id="account"]/a').click()
+# elem = driver.find_element(By.XPATH,'//*[@id="account"]/a').click()
 
 #로그인 아이디, 비밀번호 입력 및 로그인 성공
 def insert_id(id):
@@ -52,17 +56,21 @@ def insert_id(id):
     pyperclip.copy(userid)
     id.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
-insert_id(id)
+insert_id(userid)
 
 def insert_pw(pw):
     pw = driver.find_element(By.ID,'pw')
-    pw.click
+    pw.click()
     pyperclip.copy(userpw)
     pw.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
-insert_pw(pw)
+insert_pw(userpw)
 
-def log_bt(bt):
-    lo_bt = driver.find_element(By.ID,'log.login')
-    bt.click
-log_bt(bt)
+def log_bt():
+    print(1)
+    lo_bt = driver.find_element(By.ID,'log.login').click()
+
+log_bt()
+
+import time
+time.sleep(10)
