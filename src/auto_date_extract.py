@@ -51,14 +51,16 @@ elem.click()
 
 #로그인 아이디, 비밀번호 입력 및 로그인 성공
 def insert_id(id):
-    id = driver.find_element(By.ID,'id').click()
+    id = driver.find_element(By.ID,'id')
+    id.click()
     pyperclip.copy(userid)
     id.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
 insert_id(userid)
 
 def insert_pw(pw):
-    pw = driver.find_element(By.ID,'pw').click()
+    pw = driver.find_element(By.ID,'pw')
+    pw.click()
     pyperclip.copy(userpw)
     pw.send_keys(Keys.CONTROL,'v')
     time.sleep(2)
