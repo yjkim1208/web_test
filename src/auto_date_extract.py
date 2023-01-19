@@ -72,5 +72,4 @@ def log_bt():
 
 log_bt()
 
-import time
 time.sleep(10)
